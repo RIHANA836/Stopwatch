@@ -10,12 +10,13 @@ function timeToString(time) {
   
     let diffInMs = (diffInSec - ss) * 100;
     let ms = Math.floor(diffInMs);
-  
+    
+    let formattedHH = hh.toString().padstart(2, "0");
     let formattedMM = mm.toString().padStart(2, "0");
     let formattedSS = ss.toString().padStart(2, "0");
     let formattedMS = ms.toString().padStart(2, "0");
 
-    return `${formattedMM}:${formattedSS}${formattedMS}`;
+    return `${formattedHH}:${formattedMM}:${formattedSS}${formattedMS}`;
   }
 
 //variables declaration
@@ -45,7 +46,7 @@ function pause() {
 
   function reset() {
     clearInterval(timerInterval);
-    print("00:00:00");
+    print("00:00:00:00");
     elapsedTime = 0;
     showButton("PLAY");
   }
